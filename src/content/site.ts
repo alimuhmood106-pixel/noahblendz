@@ -47,6 +47,8 @@ export const PHOTOS = {
   curly: { src: "/images/barber-portrait-curly.jpg", alt: "Young man with a fresh curly cut in a striped shirt" },
   comb: { src: "/images/barber-closeup-comb.jpg", alt: "Close-up of a comb lifting wet hair before the cut" },
   blowdry: { src: "/images/barber-blowdry.jpg", alt: "Noah styling curly hair with a red blow dryer" },
+  curlyTaper: { src: "/images/curly-taper-graffiti.jpg", alt: "Curly top with a low taper in front of the NOAH BLENDZ graffiti wall" },
+  curlyDesign: { src: "/images/curly-razor-design.jpg", alt: "Curly top with a taper and a razor-line design on the side" },
 };
 
 /* ---- Copy in three languages ---- */

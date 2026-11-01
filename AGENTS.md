@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep photo definitions in the shared site content module and reference uploaded media through Lovable asset pointers so page sections share one editable photo source.

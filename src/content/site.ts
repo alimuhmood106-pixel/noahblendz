@@ -9,6 +9,9 @@ import sideprofile from "@/assets/barber-sideprofile.jpg.asset.json";
 import curly from "@/assets/barber-portrait-curly.jpg.asset.json";
 import comb from "@/assets/barber-closeup-comb.jpg.asset.json";
 import blowdry from "@/assets/barber-blowdry.jpg.asset.json";
+import texturedFringe from "@/assets/textured-fringe.png.asset.json";
+import kidsTextured from "@/assets/kids-textured-cut.png.asset.json";
+import freestyleFade from "@/assets/freestyle-fade.png.asset.json";
 
 export type Lang = "en" | "ku" | "ar";
 
@@ -44,6 +47,9 @@ export const HOURS: { days: Record<Lang, string>; time: string }[] = [
 
 /* ---- Photos ---- */
 export const PHOTOS = {
+  texturedFringe: { src: texturedFringe.url, alt: "Fresh textured fringe with tapered sides" },
+  kidsTextured: { src: kidsTextured.url, alt: "Smiling young client with a textured haircut" },
+  freestyleFade: { src: freestyleFade.url, alt: "Side view of a textured cut with a shaved freestyle design" },
   fade: { src: fade.url, alt: "Low skin fade with textured top in front of the graffiti NOAH BLENDZ wall" },
   cutting: { src: cutting.url, alt: "Noah cutting a client's hair with gold scissors and a comb" },
   barber: { src: barberPortrait.url, alt: "Noah standing with arms crossed, mall lights behind him at night" },

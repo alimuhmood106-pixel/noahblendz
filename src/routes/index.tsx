@@ -279,7 +279,7 @@ function Index() {
                 [PHOTOS.kidsTextured, "aspect-[3/4]", "center 65%"],
                 [PHOTOS.freestyleFade, "aspect-[4/5]", "center 65%"],
                 [PHOTOS.curlyTaper, "aspect-[3/4]", "center 60%"],
-                [PHOTOS.curlyDesign, "aspect-[4/5]", "35% 60%"],
+                [PHOTOS.curlyDesign, "aspect-[3/5]", "35% 60%"],
               ].map(([p, a, pos], i) => {
                 const ph = p as { src: string; alt: string };
                 return (

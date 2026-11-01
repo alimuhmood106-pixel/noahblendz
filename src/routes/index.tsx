@@ -70,7 +70,7 @@ function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; 
 }
 
 function Logo({ size = "md", tone = "ink" }: { size?: "sm" | "md" | "lg"; tone?: "ink" | "light" }) {
-  const s = { sm: "text-2xl", md: "text-4xl", lg: "text-7xl sm:text-8xl" }[size];
+  const s = { sm: "text-xl", md: "text-4xl", lg: "text-[2.6rem] sm:text-7xl md:text-8xl" }[size];
   const color = tone === "ink" ? "text-ink" : "text-paper";
   return (
     <span dir="ltr" className={`relative inline-flex items-end leading-none ${s} ${color}`} aria-label="NoahBlendz">
@@ -79,7 +79,7 @@ function Logo({ size = "md", tone = "ink" }: { size?: "sm" | "md" | "lg"; tone?:
         <svg viewBox="0 0 40 22" className="absolute -top-[0.55em] left-[0.55em] h-[0.5em] w-auto -rotate-12" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round" aria-hidden>
           <path d="M3 19 L5 5 L13 13 L20 3 L27 13 L35 5 L37 19 Z" />
         </svg>
-        <span className="inline-block -rotate-[8deg] font-tag text-[1.25em]" style={{ fontFamily: "'Rubik Wet Paint', cursive" }}>
+        <span className="inline-block -rotate-[8deg] font-tag text-[1.2em] uppercase" style={{ fontFamily: "'Rubik Wet Paint', cursive" }}>
           Blendz
         </span>
       </span>

@@ -1,4 +1,6 @@
 # Tasks
+- [x] Apply graffiti fonts and styling without changing content or layout structure.
+- [x] Verify readability and interactions across all languages and screen sizes.
 - [x] Preserve Noah's name in Kurdish and Arabic.
 - [x] Remove the final fresh-cut section.
 - [x] Replace all logos and the favicon with the uploaded logo.

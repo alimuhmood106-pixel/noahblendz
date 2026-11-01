@@ -212,11 +212,11 @@ function Index() {
         <section className="bg-paper py-20 md:py-32">
           <div className="mx-auto grid max-w-7xl grid-cols-12 gap-4 px-5 sm:px-8 md:gap-8">
             <Reveal className="col-span-8 md:col-span-5">
-              <Photo src={PHOTOS.cutting.src} alt={PHOTOS.cutting.alt} className="aspect-[3/4]" pos="60% 30%" />
+              <Photo src={PHOTOS.barber.src} alt={PHOTOS.barber.alt} className="aspect-[3/4]" pos="35% 30%" />
+              <p className="mt-3 text-xs text-steel">Noah — Majidi Mall</p>
             </Reveal>
             <Reveal delay={150} className="col-span-4 mt-24 md:col-span-3 md:mt-40">
-              <Photo src={PHOTOS.barber.src} alt={PHOTOS.barber.alt} className="aspect-[2/3]" pos="35% 30%" />
-              <p className="mt-3 text-xs text-steel">Noah — Majidi Mall</p>
+              <Photo src={PHOTOS.cutting.src} alt={PHOTOS.cutting.alt} className="aspect-[2/3]" pos="60% 30%" />
             </Reveal>
             <Reveal delay={100} className="col-span-12 md:col-span-4 md:pt-8">
               <Eyebrow n="01">{t.about.eyebrow}</Eyebrow>
@@ -231,8 +231,8 @@ function Index() {
 
         {/* SERVICES */}
         <section id="services" className="relative overflow-hidden bg-ink py-20 text-paper md:py-32">
-          <div className="pointer-events-none absolute inset-y-0 end-0 hidden w-[38%] md:block">
-            <img src={PHOTOS.comb.src} alt="" loading="lazy" className="h-full w-full object-cover opacity-40 grayscale" />
+          <div className="pointer-events-none absolute inset-y-0 end-0 w-full md:w-[38%]">
+            <img src={PHOTOS.comb.src} alt="" loading="lazy" className="h-full w-full object-cover opacity-25 grayscale md:opacity-40" />
           </div>
           <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
             <div className="max-w-2xl">

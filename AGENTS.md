@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep photo definitions in the shared site content module and reference uploaded media through Lovable asset pointers so page sections share one editable photo source.
+- Keep the logo asset in shared site content and render all page logos through one size-aware image helper; derive the public favicon from the same source to keep branding consistent.

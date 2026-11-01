@@ -5,13 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Rubik Spray Paint", "Vazirmatn", Impact, sans-serif;
+  --font-display: "Anton", "Vazirmatn", Impact, sans-serif;
   --font-sans: "Inter", "Vazirmatn", system-ui, sans-serif;
-  --font-tag: "Permanent Marker", "Vazirmatn", cursive;
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
+  --font-tag: "Rubik Wet Paint", "Permanent Marker", cursive;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -45,11 +45,6 @@
   --ash: oklch(0.8 0.002 286); /* #BDBDBF */
   --steel: oklch(0.62 0.003 286); /* #8A8A8C */
   --ink: oklch(0.218 0 0); /* #1A1A1A */
-  --paint: oklch(0.995 0 0);
-  --shadow-print: 4px 5px 0 var(--ink);
-  --shadow-button: 4px 4px 0 var(--ink);
-  --shadow-lettering: 3px 4px 0 var(--ink);
-  --concrete-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='rough'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.42' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.09'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23rough)'/%3E%3C/svg%3E");
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -84,7 +79,6 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-weight: 500;
     -webkit-font-smoothing: antialiased;
   }
   [dir="rtl"] body {
@@ -92,12 +86,12 @@
   }
 }
 
-/* Painted lettering, with Arabic-script headings kept in Vazirmatn. */
+/* Headings: condensed caps in LTR, heavy Vazirmatn in RTL */
 @utility display {
   font-family: var(--font-display);
   text-transform: uppercase;
-  line-height: 1.08;
-  letter-spacing: 0;
+  line-height: 0.92;
+  letter-spacing: 0.005em;
   [dir="rtl"] & {
     font-family: "Vazirmatn", sans-serif;
     font-weight: 900;
@@ -108,13 +102,10 @@
 
 @utility eyebrow {
   font-size: 0.7rem;
-  font-family: var(--font-tag);
-  letter-spacing: 0;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 500;
   [dir="rtl"] & {
-    font-family: "Vazirmatn", sans-serif;
-    font-weight: 700;
     letter-spacing: 0;
     font-size: 0.8rem;
   }
@@ -128,8 +119,9 @@
     inset: -50%;
     pointer-events: none;
     z-index: 100;
-    opacity: 0.04;
+    opacity: 0.07;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    animation: grain-shift 1.2s steps(4) infinite;
   }
 }
 
@@ -143,8 +135,8 @@
 
 @utility reveal {
   opacity: 0;
-  transform: translateY(7px) scale(0.98);
-  transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
   &[data-shown="true"] {
     opacity: 1;
     transform: none;
@@ -153,116 +145,19 @@
 
 @utility zoom-img {
   overflow: hidden;
-  border: 3px solid var(--paint);
-  box-shadow: var(--shadow-print);
-  transform: rotate(-1.5deg);
+  & img {
+    transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  &:hover img {
+    transform: scale(1.05);
+  }
 }
 
 @utility photo-shade {
   background: linear-gradient(to top, color-mix(in oklab, var(--ink) 85%, transparent), color-mix(in oklab, var(--ink) 35%, transparent) 55%, color-mix(in oklab, var(--ink) 45%, transparent));
 }
 
-.grain {
-  & section.bg-fog,
-  & section.bg-paper,
-  & header {
-    background-image: var(--concrete-texture);
-  }
-
-  & main .display {
-    position: relative;
-    color: var(--paint);
-    -webkit-text-stroke: 3px var(--ink);
-    paint-order: stroke fill;
-    text-shadow: var(--shadow-lettering);
-    transform: rotate(-2deg);
-    transform-origin: center;
-    overflow-wrap: anywhere;
-  }
-
-  & main h2.display::after {
-    content: "";
-    display: block;
-    width: 72px;
-    height: 6px;
-    margin-top: 14px;
-    background: var(--ink);
-    transform: rotate(-2deg);
-    clip-path: polygon(0 25%, 95% 0, 100% 65%, 4% 100%);
-  }
-
-  & main > section:first-child .display::after {
-    content: "";
-    display: block;
-    width: 48px;
-    height: 15px;
-    margin-top: 7px;
-    background: var(--paint);
-    filter: drop-shadow(2px 2px 0 var(--ink));
-    clip-path: polygon(0 0, 100% 0, 100% 15%, 76% 15%, 76% 75%, 72% 100%, 68% 75%, 68% 15%, 32% 15%, 32% 50%, 28% 70%, 24% 50%, 24% 15%, 0 15%);
-  }
-
-  & a.rounded-sm {
-    border: 3px solid var(--ink);
-    border-radius: 0;
-    box-shadow: var(--shadow-button);
-    font-family: var(--font-tag);
-    font-weight: 400;
-    letter-spacing: 0;
-    transform: rotate(-1deg);
-    transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
-    min-height: 44px;
-  }
-
-  & a.rounded-sm:hover,
-  & a.rounded-sm:active {
-    transform: translate(3px, 3px) rotate(-1deg);
-    box-shadow: 1px 1px 0 var(--ink);
-  }
-
-  & a:focus-visible,
-  & button:focus-visible {
-    outline: 3px solid var(--steel);
-    outline-offset: 5px;
-  }
-
-  & nav,
-  & header button,
-  & main a.border-b {
-    font-family: var(--font-tag);
-    letter-spacing: 0;
-  }
-
-  & #gallery .break-inside-avoid:nth-child(even) .zoom-img,
-  & main > section:nth-child(2) .reveal:nth-child(2) .zoom-img {
-    transform: rotate(1.5deg);
-  }
-}
-
-[dir="rtl"] .grain {
-  & a.rounded-sm,
-  & nav,
-  & header button,
-  & main a.border-b {
-    font-family: "Vazirmatn", sans-serif;
-    font-weight: 700;
-  }
-}
-
-@media (max-width: 639px) {
-  .grain main > section:first-child .display {
-    font-size: 2rem;
-    line-height: 1.18;
-    -webkit-text-stroke-width: 2.5px;
-  }
-  .grain main h2.display {
-    font-size: 2.5rem;
-    -webkit-text-stroke-width: 2.5px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .grain::after { animation: none; }
-  .grain a.rounded-sm { transition: none; }
 }

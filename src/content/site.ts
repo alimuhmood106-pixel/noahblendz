@@ -2,23 +2,12 @@
  * NOAHBLENDZ — EDITABLE CONTENT
  * Prices, hours, phone, links and photos all live here.
  * ===================================================================== */
-import fade from "@/assets/barber-fade.jpg.asset.json";
-import cutting from "@/assets/barber-cutting.jpg.asset.json";
-import barberPortrait from "@/assets/barber-barber-portrait.jpg.asset.json";
-import sideprofile from "@/assets/barber-sideprofile.jpg.asset.json";
-import curly from "@/assets/barber-portrait-curly.jpg.asset.json";
-import comb from "@/assets/barber-closeup-comb.jpg.asset.json";
-import blowdry from "@/assets/barber-blowdry.jpg.asset.json";
-import texturedFringe from "@/assets/textured-fringe.png.asset.json";
-import kidsTextured from "@/assets/kids-textured-cut.png.asset.json";
-import freestyleFade from "@/assets/freestyle-fade.png.asset.json";
-import logo from "@/assets/noah-blendz-logo.png.asset.json";
 
 export type Lang = "en" | "ku" | "ar";
 
 export const SITE = {
   name: "NoahBlendz",
-  logo: logo.url,
+  logo: "/images/noah-blendz-logo.png",
   phoneDisplay: "+964 773 457 7053",
   phoneHref: "tel:+9647734577053",
   instagram: "https://www.instagram.com/nawabarber/",
@@ -27,8 +16,7 @@ export const SITE = {
     "https://www.google.com/maps/search/?api=1&query=NoahBlendz%20Majidi%20Mall%2C%20Sulaymaniyah%2C%20Sulaymaniyah%20Governorate%2C%2046001",
   mapEmbed: "https://www.google.com/maps?q=Majidi+Mall+Sulaymaniyah&output=embed",
   address: "Majidi Mall, Sulaymaniyah, Sulaymaniyah Governorate, 46001, Iraq",
-  shareImage:
-    "https://id-preview--819756bc-fa15-4ba8-8bd0-eb9ca67a755b.lovable.app" + fade.url,
+  shareImage: "https://noahblendz.pages.dev/images/barber-fade.jpg",
 };
 
 /* ---- Services: one price list, edit freely ---- */
@@ -49,16 +37,16 @@ export const HOURS: { days: Record<Lang, string>; time: string }[] = [
 
 /* ---- Photos ---- */
 export const PHOTOS = {
-  texturedFringe: { src: texturedFringe.url, alt: "Fresh textured fringe with tapered sides" },
-  kidsTextured: { src: kidsTextured.url, alt: "Smiling young client with a textured haircut" },
-  freestyleFade: { src: freestyleFade.url, alt: "Side view of a textured cut with a shaved freestyle design" },
-  fade: { src: fade.url, alt: "Low skin fade with textured top in front of the graffiti NOAH BLENDZ wall" },
-  cutting: { src: cutting.url, alt: "Noah cutting a client's hair with gold scissors and a comb" },
-  barber: { src: barberPortrait.url, alt: "Noah standing with arms crossed, mall lights behind him at night" },
-  side: { src: sideprofile.url, alt: "Side profile of a client with a slicked-back, side-swept cut" },
-  curly: { src: curly.url, alt: "Young man with a fresh curly cut in a striped shirt" },
-  comb: { src: comb.url, alt: "Close-up of a comb lifting wet hair before the cut" },
-  blowdry: { src: blowdry.url, alt: "Noah styling curly hair with a red blow dryer" },
+  texturedFringe: { src: "/images/textured-fringe.png", alt: "Fresh textured fringe with tapered sides" },
+  kidsTextured: { src: "/images/kids-textured-cut.png", alt: "Smiling young client with a textured haircut" },
+  freestyleFade: { src: "/images/freestyle-fade.png", alt: "Side view of a textured cut with a shaved freestyle design" },
+  fade: { src: "/images/barber-fade.jpg", alt: "Low skin fade with textured top in front of the graffiti NOAH BLENDZ wall" },
+  cutting: { src: "/images/barber-cutting.jpg", alt: "Noah cutting a client's hair with gold scissors and a comb" },
+  barber: { src: "/images/barber-barber-portrait.jpg", alt: "Noah standing with arms crossed, mall lights behind him at night" },
+  side: { src: "/images/barber-sideprofile.jpg", alt: "Side profile of a client with a slicked-back, side-swept cut" },
+  curly: { src: "/images/barber-portrait-curly.jpg", alt: "Young man with a fresh curly cut in a striped shirt" },
+  comb: { src: "/images/barber-closeup-comb.jpg", alt: "Close-up of a comb lifting wet hair before the cut" },
+  blowdry: { src: "/images/barber-blowdry.jpg", alt: "Noah styling curly hair with a red blow dryer" },
 };
 
 /* ---- Copy in three languages ---- */

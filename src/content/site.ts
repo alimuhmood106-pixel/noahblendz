@@ -41,8 +41,8 @@ export const SERVICES: { price: string; name: Record<Lang, string> }[] = [
 
 /* ---- Hours: PLACEHOLDER — replace with real hours ---- */
 export const HOURS: { days: Record<Lang, string>; time: string }[] = [
-  { days: { en: "Sat – Thu", ku: "شەممە – پێنجشەممە", ar: "السبت – الخميس" }, time: "11:00 – 22:00" },
-  { days: { en: "Friday", ku: "هەینی", ar: "الجمعة" }, time: "15:00 – 22:00" },
+  { days: { en: "Sat – Thu", ku: "شەممە – پێنجشەممە", ar: "السبت – الخميس" }, time: "11:00 AM – 10:00 PM" },
+  { days: { en: "Friday", ku: "هەینی", ar: "الجمعة" }, time: "3:00 PM – 10:00 PM" },
 ];
 
 /* ---- Photos ---- */

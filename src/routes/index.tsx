@@ -264,13 +264,12 @@ function Index() {
             </Reveal>
             <div className="columns-2 gap-3 md:columns-3 md:gap-5 [&>*]:mb-3 md:[&>*]:mb-5">
               {[
-                [PHOTOS.fade, "aspect-[3/4]", "40% 40%"],
+                [PHOTOS.texturedFringe, "aspect-[3/4]", "center 65%"],
                 [PHOTOS.curly, "aspect-[2/3]", "center 30%"],
                 [PHOTOS.side, "aspect-[4/5]", "40% 50%"],
                 [PHOTOS.blowdry, "aspect-[3/5]", "center 40%"],
-                [PHOTOS.comb, "aspect-square", "center 35%"],
-                [PHOTOS.cutting, "aspect-[3/4]", "60% 40%"],
-                [PHOTOS.barber, "aspect-[4/5]", "35% 35%"],
+                [PHOTOS.kidsTextured, "aspect-[3/4]", "center 65%"],
+                [PHOTOS.freestyleFade, "aspect-[4/5]", "center 65%"],
               ].map(([p, a, pos], i) => {
                 const ph = p as { src: string; alt: string };
                 return (
@@ -286,40 +285,11 @@ function Index() {
           </div>
         </section>
 
-        {/* HOW TO BOOK */}
-        <section className="bg-paper py-20 md:py-32">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-5 sm:px-8">
-            <div className="col-span-12 md:col-span-7">
-              <Reveal>
-                <p className="eyebrow text-steel">04 / {t.book.eyebrow}</p>
-                <h2 className="display mt-4 text-6xl md:text-8xl">{t.book.title}</h2>
-              </Reveal>
-              <ol className="mt-12 space-y-0 border-t border-ash">
-                {t.book.steps.map(([h, d], i) => (
-                  <li key={h}>
-                    <Reveal delay={i * 100} className="grid grid-cols-[3.5rem_1fr] gap-4 border-b border-ash py-7 md:grid-cols-[5rem_1fr]">
-                      <span className="display text-5xl text-ash md:text-6xl">{i + 1}</span>
-                      <div>
-                        <h3 className="text-xl font-semibold">{h}</h3>
-                        <p className="mt-1 text-sm text-steel">{d}</p>
-                      </div>
-                    </Reveal>
-                  </li>
-                ))}
-              </ol>
-              <p className="mt-8 inline-block bg-ink px-3 py-1.5 text-sm font-medium text-paper">{t.book.warn}</p>
-            </div>
-            <Reveal delay={200} className="col-span-12 md:col-span-4 md:col-start-9 md:mt-32">
-              <Photo src={PHOTOS.blowdry.src} alt={PHOTOS.blowdry.alt} className="aspect-[3/4]" pos="center 35%" />
-            </Reveal>
-          </div>
-        </section>
-
         {/* VISIT */}
         <section id="visit" className="border-t border-ash bg-fog py-20 md:py-32">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 md:grid-cols-12">
             <Reveal className="md:col-span-5">
-              <p className="eyebrow text-steel">05 / {t.visit.eyebrow}</p>
+              <p className="eyebrow text-steel">04 / {t.visit.eyebrow}</p>
               <h2 className="display mt-4 text-6xl md:text-7xl">{t.visit.title}</h2>
               <p className="mt-8 flex gap-3 text-lg">
                 <MapPin className="mt-1 h-5 w-5 shrink-0" strokeWidth={1.5} /> {t.visit.address}
@@ -348,7 +318,7 @@ function Index() {
             </Reveal>
             <Reveal delay={150} className="md:col-span-7">
               <div className="aspect-[4/5] border border-ash bg-ash/30 md:aspect-[4/3]">
-                <iframe title="Map — Majidi Mall, Sulaymaniyah" src={SITE.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-full w-full grayscale" />
+                <iframe title="Map — Majidi Mall, Sulaymaniyah" src={SITE.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-full w-full" />
               </div>
             </Reveal>
           </div>

@@ -111,6 +111,27 @@
   }
 }
 
+/* Logo-style headings (LTR only): light fill, black outline, hard drop shadow,
+   like the NoahBlendz graffiti logo. Set --tag-shadow on a dark section to
+   keep the shadow visible there. */
+@utility outline-tag {
+  --tag-edge: var(--ink);
+  color: var(--paper);
+  text-shadow:
+    0 -2px 0 var(--tag-edge), 0 2px 0 var(--tag-edge), -2px 0 0 var(--tag-edge), 2px 0 0 var(--tag-edge),
+    -2px -2px 0 var(--tag-edge), 2px -2px 0 var(--tag-edge), -2px 2px 0 var(--tag-edge), 2px 2px 0 var(--tag-edge),
+    5px 5px 0 var(--tag-shadow, var(--ink));
+  [dir="rtl"] & {
+    text-shadow: none;
+  }
+}
+
+/* Spray-tag handwriting for small accents (section numbers, signature) */
+@utility tag-font {
+  font-family: var(--font-tag);
+  letter-spacing: 0.02em;
+}
+
 /* Film grain over the whole page */
 @utility grain {
   &::after {

@@ -76,6 +76,25 @@ function Logo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
   );
 }
 
+function Sparkle({ className = "" }: { className?: string }) {
+  // 4-point star, same shape as the sparkles in the logo
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={`inline-block h-3.5 w-3.5 ${className}`} fill="currentColor" stroke="var(--ink)" strokeWidth="1.5" strokeLinejoin="round">
+      <path d="M12 1.5c.9 5.6 4.9 9.6 10.5 10.5-5.6.9-9.6 4.9-10.5 10.5C11.1 16.9 7.1 12.9 1.5 12 7.1 11.1 11.1 7.1 12 1.5z" />
+    </svg>
+  );
+}
+
+function Eyebrow({ n, children, className = "text-steel" }: { n: string; children: ReactNode; className?: string }) {
+  return (
+    <p className={`eyebrow flex items-center gap-2 ${className}`}>
+      <Sparkle className="text-paper" />
+      <span className="tag-font text-base normal-case tracking-normal" dir="ltr">{n}</span>
+      <span>/ {children}</span>
+    </p>
+  );
+}
+
 function BtnIG({ label, variant = "solid" }: { label: string; variant?: "solid" | "ink" }) {
   const cls = variant === "solid" ? "bg-fog text-ink hover:bg-paper" : "bg-ink text-paper hover:bg-ink/85";
   return (
@@ -177,7 +196,7 @@ function Index() {
               <Logo size="lg" />
             </Reveal>
             <Reveal delay={150}>
-              <p className="display mt-8 max-w-xl text-4xl text-paper sm:text-6xl">{t.hero.tagline}</p>
+              <p className="display outline-tag mt-8 max-w-xl text-4xl text-paper [--tag-shadow:var(--steel)] sm:text-6xl">{t.hero.tagline}</p>
             </Reveal>
             <Reveal delay={300} className="mt-8 flex flex-col gap-3 sm:flex-row">
               <BtnIG label={t.hero.ig} />
@@ -200,12 +219,12 @@ function Index() {
               <p className="mt-3 text-xs text-steel">Noah — Majidi Mall</p>
             </Reveal>
             <Reveal delay={100} className="col-span-12 md:col-span-4 md:pt-8">
-              <p className="eyebrow text-steel">01 / {t.about.eyebrow}</p>
-              <h2 className="display mt-4 text-5xl md:text-6xl">{t.about.title}</h2>
+              <Eyebrow n="01">{t.about.eyebrow}</Eyebrow>
+              <h2 className="display outline-tag mt-4 text-5xl md:text-6xl">{t.about.title}</h2>
               <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-ink/80">
                 {t.about.body.map((p) => <p key={p}>{p}</p>)}
               </div>
-              <p dir="ltr" className="mt-8 font-medium rtl:text-right">{t.about.sign}</p>
+              <p dir="ltr" className="tag-font mt-8 text-2xl rtl:text-right">{t.about.sign}</p>
             </Reveal>
           </div>
         </section>
@@ -218,8 +237,8 @@ function Index() {
           <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
             <div className="max-w-2xl">
               <Reveal>
-                <p className="eyebrow text-steel">02 / {t.services.eyebrow}</p>
-                <h2 className="display mt-4 text-6xl md:text-8xl">{t.services.title}</h2>
+                <Eyebrow n="02">{t.services.eyebrow}</Eyebrow>
+                <h2 className="display outline-tag mt-4 text-6xl [--tag-shadow:var(--steel)] md:text-8xl">{t.services.title}</h2>
                 <p className="mt-4 text-sm text-ash">{t.services.note}</p>
               </Reveal>
               <ul className="mt-12 border-t border-paper/20">
@@ -244,8 +263,8 @@ function Index() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <Reveal className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
               <div>
-                <p className="eyebrow text-steel">03 / {t.gallery.eyebrow}</p>
-                <h2 className="display mt-4 text-6xl md:text-8xl">{t.gallery.title}</h2>
+                <Eyebrow n="03">{t.gallery.eyebrow}</Eyebrow>
+                <h2 className="display outline-tag mt-4 text-6xl md:text-8xl">{t.gallery.title}</h2>
               </div>
               <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-b border-ink pb-1 text-sm font-medium">
                 <Instagram className="h-4 w-4" strokeWidth={1.5} /> {SITE.instagramHandle}
@@ -278,8 +297,8 @@ function Index() {
         <section id="visit" className="border-t border-ash bg-fog py-20 md:py-32">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 md:grid-cols-12">
             <Reveal className="md:col-span-5">
-              <p className="eyebrow text-steel">04 / {t.visit.eyebrow}</p>
-              <h2 className="display mt-4 text-6xl md:text-7xl">{t.visit.title}</h2>
+              <Eyebrow n="04">{t.visit.eyebrow}</Eyebrow>
+              <h2 className="display outline-tag mt-4 text-6xl md:text-7xl">{t.visit.title}</h2>
               <p className="mt-8 flex gap-3 text-lg">
                 <MapPin className="mt-1 h-5 w-5 shrink-0" strokeWidth={1.5} /> {t.visit.address}
               </p>

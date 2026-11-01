@@ -69,21 +69,10 @@ function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; 
   );
 }
 
-function Logo({ size = "md", tone = "ink" }: { size?: "sm" | "md" | "lg"; tone?: "ink" | "light" }) {
-  const s = { sm: "text-xl", md: "text-4xl", lg: "text-[2.6rem] sm:text-7xl md:text-8xl" }[size];
-  const color = tone === "ink" ? "text-ink" : "text-paper";
+function Logo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
+  const dimensions = { sm: "h-12 w-24", md: "h-24 w-48", lg: "w-80 max-w-full sm:w-[28rem] md:w-[36rem]" }[size];
   return (
-    <span dir="ltr" className={`relative inline-flex items-end leading-none ${s} ${color}`} aria-label="NoahBlendz">
-      <span className="font-display tracking-tight" style={{ fontFamily: "Anton, sans-serif" }}>NOAH</span>
-      <span className="relative -ml-[0.18em] translate-y-[0.12em]">
-        <svg viewBox="0 0 40 22" className="absolute -top-[0.55em] left-[0.55em] h-[0.5em] w-auto -rotate-12" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round" aria-hidden>
-          <path d="M3 19 L5 5 L13 13 L20 3 L27 13 L35 5 L37 19 Z" />
-        </svg>
-        <span className="inline-block -rotate-[8deg] font-tag text-[1.2em] uppercase" style={{ fontFamily: "'Rubik Wet Paint', cursive" }}>
-          Blendz
-        </span>
-      </span>
-    </span>
+    <img src={SITE.logo} alt="NoahBlendz" width={1774} height={887} className={`inline-block object-contain ${dimensions}`} />
   );
 }
 
@@ -185,7 +174,7 @@ function Index() {
           <div className="photo-shade absolute inset-0" />
           <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-24 sm:px-8 md:pb-16">
             <Reveal>
-              <Logo size="lg" tone="light" />
+              <Logo size="lg" />
             </Reveal>
             <Reveal delay={150}>
               <p className="display mt-8 max-w-xl text-4xl text-paper sm:text-6xl">{t.hero.tagline}</p>
@@ -216,7 +205,7 @@ function Index() {
               <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-ink/80">
                 {t.about.body.map((p) => <p key={p}>{p}</p>)}
               </div>
-              <p className="mt-8 font-medium">{t.about.sign}</p>
+              <p dir="ltr" className="mt-8 font-medium rtl:text-right">{t.about.sign}</p>
             </Reveal>
           </div>
         </section>
@@ -324,24 +313,12 @@ function Index() {
           </div>
         </section>
 
-        {/* FINAL CTA */}
-        <section className="bg-ink py-24 text-paper md:py-40">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <Reveal>
-              <h2 className="display max-w-4xl text-6xl sm:text-8xl md:text-9xl">{t.cta.title}</h2>
-            </Reveal>
-            <Reveal delay={150} className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <BtnIG label={t.hero.ig} />
-              <BtnCall label={t.hero.call} />
-            </Reveal>
-          </div>
-        </section>
       </main>
 
       {/* FOOTER */}
       <footer className="border-t border-paper/10 bg-ink pb-28 pt-12 text-ash md:pb-12">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between">
-          <Logo size="md" tone="light" />
+          <Logo size="md" />
           <div className="space-y-2 text-sm">
             <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-paper"><Instagram className="h-4 w-4" strokeWidth={1.5} />{SITE.instagramHandle}</a>
             <a href={SITE.phoneHref} className="flex items-center gap-2 hover:text-paper"><Phone className="h-4 w-4" strokeWidth={1.5} /><span dir="ltr">{SITE.phoneDisplay}</span></a>

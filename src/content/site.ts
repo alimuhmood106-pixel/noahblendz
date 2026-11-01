@@ -12,11 +12,13 @@ import blowdry from "@/assets/barber-blowdry.jpg.asset.json";
 import texturedFringe from "@/assets/textured-fringe.png.asset.json";
 import kidsTextured from "@/assets/kids-textured-cut.png.asset.json";
 import freestyleFade from "@/assets/freestyle-fade.png.asset.json";
+import logo from "@/assets/noah-blendz-logo.png.asset.json";
 
 export type Lang = "en" | "ku" | "ar";
 
 export const SITE = {
   name: "NoahBlendz",
+  logo: logo.url,
   phoneDisplay: "+964 773 457 7053",
   phoneHref: "tel:+9647734577053",
   instagram: "https://www.instagram.com/nawabarber/",
@@ -119,7 +121,7 @@ export const COPY = {
         "تەکنیکی کۆن، مەقەست و مەکینە، تێکەڵ لەگەڵ ئەوەی ئێستا لە دونیای قژدا هەیە. فەیدی پاک، تێکسچەری ڕاستەقینە، هێڵ کە بۆ چەند هەفتەیەک تیژ دەمێنێتەوە.",
         "وردەکارییەکان هەموو کارەکەن. کاتەکە لەوێدا دەڕوات.",
       ],
-      sign: "— نۆح",
+      sign: "— Noah",
     },
     services: { eyebrow: "لیستی نرخ", title: "قژبڕین", note: "یەک نرخ. هەموو قژبڕینێک هەمان گرنگی پێدەدرێت." },
     gallery: { eyebrow: "کارە نوێکان", title: "لە کورسییەکەوە", more: "زیاتر لە ئینستاگرام ببینە" },
@@ -161,7 +163,7 @@ export const COPY = {
         "تقنية تقليدية بالمقص والماكينة، ممزوجة بأحدث ما يحدث في عالم الشعر. فيد نظيف، تكستشر حقيقي، وخطوط تبقى حادة لأسابيع.",
         "التفاصيل الصغيرة هي الشغل كله. وهناك يذهب الوقت.",
       ],
-      sign: "— نوح",
+      sign: "— Noah",
     },
     services: { eyebrow: "قائمة الأسعار", title: "قصات الشعر", note: "سعر واحد. كل قصة تأخذ نفس الاهتمام." },
     gallery: { eyebrow: "أعمال حديثة", title: "من الكرسي", more: "شاهد المزيد على إنستغرام" },
